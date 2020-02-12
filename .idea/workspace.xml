@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47772c55-fddd-46f6-abcc-8ddd5f74b358" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/BookStore.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/SEOExample.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/authors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/bookstore_report2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GsonParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Author.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/BookStore.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/BookStore.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CSVParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GsonParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/CSVParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSVParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GsonParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GsonParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,6 +45,13 @@
         <item name="BookStore" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="BookStore" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="book: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -121,7 +124,12 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ecf5d97f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -138,7 +146,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581029439872</updated>
       <workItem from="1581029444890" duration="3206000" />
-      <workItem from="1581544768564" duration="2743000" />
+      <workItem from="1581544768564" duration="5986000" />
     </task>
     <servers />
   </component>
