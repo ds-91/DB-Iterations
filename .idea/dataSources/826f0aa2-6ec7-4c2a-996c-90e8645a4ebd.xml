@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="BookStore">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.16">
+    <root id="1">
+      <ServerVersion>3.25.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="author"/>
+    <table id="7" parent="2" name="book"/>
+    <table id="8" parent="2" name="publisher"/>
+    <table id="9" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="10" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <table id="11" parent="2" name="store"/>
+    <table id="12" parent="2" name="store_book"/>
+    <column id="13" parent="6" name="author_name">
+      <Position>1</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="14" parent="6" name="author_email">
+      <Position>2</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="15" parent="6" name="author_url">
+      <Position>3</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <index id="16" parent="6" name="sqlite_autoindex_author_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>author_name</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="17" parent="6" name="sqlite_autoindex_author_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>author_email</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="18" parent="6" name="sqlite_autoindex_author_3">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>author_url</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="19" parent="6">
+      <ColNames>author_name</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_author_1</UnderlyingIndexName>
+    </key>
+    <key id="20" parent="6">
+      <ColNames>author_email</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_author_2</UnderlyingIndexName>
+    </key>
+    <key id="21" parent="6">
+      <ColNames>author_url</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_author_3</UnderlyingIndexName>
+    </key>
+    <column id="22" parent="7" name="isbn">
+      <Position>1</Position>
+      <DataType>VARCHAR(13)|0s</DataType>
+    </column>
+    <column id="23" parent="7" name="publisher_name">
+      <Position>2</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="24" parent="7" name="author_name">
+      <Position>3</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="25" parent="7" name="book_year">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="26" parent="7" name="book_title">
+      <Position>5</Position>
+      <DataType>VARCHAR|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="7" name="book_price">
+      <Position>6</Position>
+      <DataType>NUMERIC(20,2 digit)|0s</DataType>
+      <DefaultExpression>9.99</DefaultExpression>
+    </column>
+    <index id="28" parent="7" name="sqlite_autoindex_book_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>isbn</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="29" parent="7">
+      <ColNames>isbn</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_book_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="30" parent="7">
+      <ColNames>publisher_name</ColNames>
+      <RefTableName>publisher</RefTableName>
+      <RefColNames>pub_name</RefColNames>
+    </foreign-key>
+    <foreign-key id="31" parent="7">
+      <ColNames>author_name</ColNames>
+      <RefTableName>author</RefTableName>
+      <RefColNames>author_name</RefColNames>
+    </foreign-key>
+    <column id="32" parent="8" name="pub_name">
+      <Position>1</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="33" parent="8" name="address">
+      <Position>2</Position>
+      <DataType>VARCHAR|0s</DataType>
+      <DefaultExpression>&apos;No Physical Address&apos;</DefaultExpression>
+    </column>
+    <column id="34" parent="8" name="pub_email">
+      <Position>3</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="35" parent="8" name="pub_phone">
+      <Position>4</Position>
+      <DataType>VARCHAR(10)|0s</DataType>
+    </column>
+    <index id="36" parent="8" name="sqlite_autoindex_publisher_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pub_name</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="37" parent="8" name="sqlite_autoindex_publisher_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pub_email</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="38" parent="8" name="sqlite_autoindex_publisher_3">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pub_phone</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="8">
+      <ColNames>pub_name</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_publisher_1</UnderlyingIndexName>
+    </key>
+    <key id="40" parent="8">
+      <ColNames>pub_email</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_publisher_2</UnderlyingIndexName>
+    </key>
+    <key id="41" parent="8">
+      <ColNames>pub_phone</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_publisher_3</UnderlyingIndexName>
+    </key>
+    <column id="42" parent="9" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="43" parent="9" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="44" parent="9" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="45" parent="9" name="rootpage">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="46" parent="9" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="47" parent="10" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="48" parent="10" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="49" parent="11" name="store_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="50" parent="11" name="store_name">
+      <Position>2</Position>
+      <DataType>VARCHAR|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="11" name="store_address">
+      <Position>3</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="52" parent="11" name="store_email">
+      <Position>4</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="53" parent="11" name="store_phone">
+      <Position>5</Position>
+      <DataType>VARCHAR(30)|0s</DataType>
+    </column>
+    <index id="54" parent="11" name="sqlite_autoindex_store_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>store_name</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="55" parent="11" name="sqlite_autoindex_store_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>store_address</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="56" parent="11" name="sqlite_autoindex_store_3">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>store_phone</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="11">
+      <ColNames>store_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="58" parent="11">
+      <ColNames>store_name</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_store_1</UnderlyingIndexName>
+    </key>
+    <key id="59" parent="11">
+      <ColNames>store_address</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_store_2</UnderlyingIndexName>
+    </key>
+    <key id="60" parent="11">
+      <ColNames>store_phone</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_store_3</UnderlyingIndexName>
+    </key>
+    <column id="61" parent="12" name="store_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="62" parent="12" name="isbn">
+      <Position>2</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="63" parent="12" name="quantity">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+      <DefaultExpression>10</DefaultExpression>
+    </column>
+    <foreign-key id="64" parent="12">
+      <ColNames>store_id</ColNames>
+      <RefTableName>store</RefTableName>
+      <RefColNames>store_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="65" parent="12">
+      <ColNames>isbn</ColNames>
+      <RefTableName>book</RefTableName>
+      <RefColNames>isbn</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

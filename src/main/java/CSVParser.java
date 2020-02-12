@@ -44,7 +44,7 @@ public class CSVParser {
     }
   }
 
-  private boolean fileExists(String filename) {
+  protected static boolean fileExists(String filename) {
     File f = new File(filename);
 
     if (!f.exists()) {
